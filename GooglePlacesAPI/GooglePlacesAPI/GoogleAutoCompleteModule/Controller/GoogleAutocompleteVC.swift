@@ -160,7 +160,7 @@ extension GoogleAutocompleteVC: GoogleAutocompleteViewProtocol {
     }
     
     func updateMapLocation(lattitude:CLLocationDegrees,longitude:CLLocationDegrees){
-        let camera = GMSCameraPosition.camera(withLatitude: lattitude, longitude: longitude, zoom: 10)
+        let camera = GMSCameraPosition.camera(withLatitude: lattitude, longitude: longitude, zoom: 15)
         mapView.camera = camera
         mapView.animate(toLocation: CLLocationCoordinate2D(latitude: lattitude, longitude: longitude))
         marker.position = CLLocationCoordinate2D(latitude: lattitude, longitude: longitude)

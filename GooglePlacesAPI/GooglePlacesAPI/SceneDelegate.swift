@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController =  RootViewController.create().toNavigation(barColor: .white, tintColor: .black)
+        window?.rootViewController =  GoogleAutocompleteVC.create().toNavigation(barColor: .white, tintColor: .black)
         window?.makeKeyAndVisible()
     }
 

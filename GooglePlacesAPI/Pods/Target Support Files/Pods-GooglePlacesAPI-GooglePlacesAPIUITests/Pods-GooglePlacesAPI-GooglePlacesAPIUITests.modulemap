@@ -1,0 +1,6 @@
+framework module Pods_GooglePlacesAPI_GooglePlacesAPIUITests {
+  umbrella header "Pods-GooglePlacesAPI-GooglePlacesAPIUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

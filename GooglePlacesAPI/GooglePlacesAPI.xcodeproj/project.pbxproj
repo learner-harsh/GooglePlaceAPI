@@ -23,6 +23,11 @@
 		E457A04E2668FD72002F0E1B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E457A04D2668FD72002F0E1B /* RootViewController.swift */; };
 		E457A05726690022002F0E1B /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E457A05626690022002F0E1B /* UIView+.swift */; };
 		E457A05C266900FF002F0E1B /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E457A05B266900FF002F0E1B /* UIViewController+.swift */; };
+		E457A06126690B5C002F0E1B /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E457A06026690B5C002F0E1B /* UITextField+.swift */; };
+		E457A06626690E00002F0E1B /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E457A06526690E00002F0E1B /* Constraints.swift */; };
+		E457A07526691724002F0E1B /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E457A07426691724002F0E1B /* APIHandler.swift */; };
+		E457A07A26691C8C002F0E1B /* URLSession+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E457A07926691C8B002F0E1B /* URLSession+.swift */; };
+		E457A08026691CC1002F0E1B /* Prediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E457A07F26691CC1002F0E1B /* Prediction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +75,11 @@
 		E457A04D2668FD72002F0E1B /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		E457A05626690022002F0E1B /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		E457A05B266900FF002F0E1B /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		E457A06026690B5C002F0E1B /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		E457A06526690E00002F0E1B /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		E457A07426691724002F0E1B /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
+		E457A07926691C8B002F0E1B /* URLSession+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+.swift"; sourceTree = "<group>"; };
+		E457A07F26691CC1002F0E1B /* Prediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prediction.swift; sourceTree = "<group>"; };
 		F97A8285C5A7D7D2B110F42D /* Pods-GooglePlacesAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GooglePlacesAPI.debug.xcconfig"; path = "Target Support Files/Pods-GooglePlacesAPI/Pods-GooglePlacesAPI.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +159,9 @@
 		E4579FDE2668D9CF002F0E1B /* GooglePlacesAPI */ = {
 			isa = PBXGroup;
 			children = (
+				E457A07E26691CB0002F0E1B /* Models */,
+				E457A0732669170B002F0E1B /* APIHandler */,
+				E457A072266916B4002F0E1B /* CommonViews */,
 				E457A0182668DCAB002F0E1B /* GoogleAutoCompleteModule */,
 				E457A03E2668F718002F0E1B /* CommonModule */,
 				E4579FDF2668D9CF002F0E1B /* AppDelegate.swift */,
@@ -202,6 +215,7 @@
 			children = (
 				E457A0552669000B002F0E1B /* Extensions */,
 				E457A03F2668F747002F0E1B /* AppConstants.swift */,
+				E457A06526690E00002F0E1B /* Constraints.swift */,
 			);
 			path = CommonModule;
 			sourceTree = "<group>";
@@ -219,8 +233,33 @@
 			children = (
 				E457A05626690022002F0E1B /* UIView+.swift */,
 				E457A05B266900FF002F0E1B /* UIViewController+.swift */,
+				E457A06026690B5C002F0E1B /* UITextField+.swift */,
+				E457A07926691C8B002F0E1B /* URLSession+.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E457A072266916B4002F0E1B /* CommonViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CommonViews;
+			sourceTree = "<group>";
+		};
+		E457A0732669170B002F0E1B /* APIHandler */ = {
+			isa = PBXGroup;
+			children = (
+				E457A07426691724002F0E1B /* APIHandler.swift */,
+			);
+			path = APIHandler;
+			sourceTree = "<group>";
+		};
+		E457A07E26691CB0002F0E1B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E457A07F26691CC1002F0E1B /* Prediction.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +274,7 @@
 				E4579FD92668D9CF002F0E1B /* Frameworks */,
 				E4579FDA2668D9CF002F0E1B /* Resources */,
 				CEFB63BACD59511933687DF3 /* [CP] Copy Pods Resources */,
+				5A207223999BCF955604F52D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -273,6 +313,7 @@
 				E4579FFA2668D9D2002F0E1B /* Frameworks */,
 				E4579FFB2668D9D2002F0E1B /* Resources */,
 				0CE6D84AC02EEA9C8C05FA8D /* [CP] Copy Pods Resources */,
+				AB79727C58D4BF35B6059F7F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -415,6 +456,40 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5A207223999BCF955604F52D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GooglePlacesAPI/Pods-GooglePlacesAPI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GooglePlacesAPI/Pods-GooglePlacesAPI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GooglePlacesAPI/Pods-GooglePlacesAPI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB79727C58D4BF35B6059F7F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GooglePlacesAPI-GooglePlacesAPIUITests/Pods-GooglePlacesAPI-GooglePlacesAPIUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GooglePlacesAPI-GooglePlacesAPIUITests/Pods-GooglePlacesAPI-GooglePlacesAPIUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GooglePlacesAPI-GooglePlacesAPIUITests/Pods-GooglePlacesAPI-GooglePlacesAPIUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CEFB63BACD59511933687DF3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -463,11 +538,16 @@
 			files = (
 				E457A0222668DCFB002F0E1B /* GoogleAutocompleteVC.swift in Sources */,
 				E4579FE02668D9CF002F0E1B /* AppDelegate.swift in Sources */,
+				E457A07A26691C8C002F0E1B /* URLSession+.swift in Sources */,
+				E457A06626690E00002F0E1B /* Constraints.swift in Sources */,
 				E457A05C266900FF002F0E1B /* UIViewController+.swift in Sources */,
+				E457A07526691724002F0E1B /* APIHandler.swift in Sources */,
 				E457A05726690022002F0E1B /* UIView+.swift in Sources */,
 				E457A04E2668FD72002F0E1B /* RootViewController.swift in Sources */,
 				E457A0492668F7CE002F0E1B /* GoogleAutocompleteVM.swift in Sources */,
+				E457A06126690B5C002F0E1B /* UITextField+.swift in Sources */,
 				E4579FE22668D9CF002F0E1B /* SceneDelegate.swift in Sources */,
+				E457A08026691CC1002F0E1B /* Prediction.swift in Sources */,
 				E457A0402668F747002F0E1B /* AppConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

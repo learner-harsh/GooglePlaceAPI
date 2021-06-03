@@ -6,6 +6,7 @@ target 'GooglePlacesAPI' do
   use_frameworks!
   # Pods for GooglePlacesAPI
   pod 'GoogleMaps'
+  pod 'IQKeyboardManager'
 
   target 'GooglePlacesAPITests' do
     inherit! :search_paths

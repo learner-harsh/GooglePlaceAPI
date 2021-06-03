@@ -13,12 +13,14 @@ protocol GoogleAutocompleteViewProtocol: class {
 }
 
 protocol GoogleAutocompleteVMProtocol {
+    var userLocation: CLLocationCoordinate2D? {get}
     func viewDidLoad()
 }
 
 class GoogleAutocompleteVM: NSObject {
     private weak var view: GoogleAutocompleteViewProtocol!
     private let locationManager = CLLocationManager()
+    private var currentLocation: CLLocationCoordinate2D?
     init( view: GoogleAutocompleteViewProtocol) {
         self.view = view
     }
@@ -29,6 +31,10 @@ class GoogleAutocompleteVM: NSObject {
 }
 
 extension GoogleAutocompleteVM: GoogleAutocompleteVMProtocol {
+    var userLocation: CLLocationCoordinate2D? {
+        return currentLocation
+    }
+    
     func viewDidLoad() {
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.requestWhenInUseAuthorization()
@@ -43,6 +49,7 @@ extension GoogleAutocompleteVM: GoogleAutocompleteVMProtocol {
 extension GoogleAutocompleteVM: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        currentLocation = locValue
         print("locations = \(locValue.latitude) \(locValue.longitude)")
         view.updateMapLocation(lattitude: locValue.latitude, longitude: locValue.longitude)
     }

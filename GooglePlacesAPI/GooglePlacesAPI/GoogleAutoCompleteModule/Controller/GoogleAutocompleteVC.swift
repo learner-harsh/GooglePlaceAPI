@@ -87,9 +87,10 @@ class GoogleAutocompleteVC: UIViewController {
     
     @objc private
     func textFieldDidChange(textField: UITextField) {
-        debugPrint("Entered Text: \(textField.text)")
-        APIHandler.shared.googlePlacesResult(input: textField.text ?? "") { (array) in
+        APIHandler.shared.googlePlacesResult(input: textField.text ?? "", location: viewModel.userLocation ?? CLLocationCoordinate2D(latitude: 0, longitude: 0)) { [weak self] (array) in
+            guard let self = self else {return}
             
+            debugPrint(array)
         }
     }
 }
@@ -116,7 +117,6 @@ extension GoogleAutocompleteVC {
         
         let window = UIApplication.shared.windows.first
         let topPadding = window?.safeAreaInsets.top ?? 0 
-//        let topPadding = view.safeAreaHeight
         
         if !txtField.isDescendant(of: view) {
             view.addSubview(txtField)
@@ -132,9 +132,7 @@ extension GoogleAutocompleteVC {
         stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constraints.point16).isActive = true
         stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constraints.point16).isActive = true
         stackView.topAnchor.constraint(equalTo: txtField.bottomAnchor, constant: Constraints.point0).isActive = true
-//        stackView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        
-        
+        stackView.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
     private func transparentNavigationBar() {

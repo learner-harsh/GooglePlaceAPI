@@ -87,7 +87,13 @@ class GoogleAutocompleteVC: UIViewController {
     
     @objc private
     func textFieldDidChange(textField: UITextField) {
-        viewModel.searchAddress(input: textField.text ?? "")
+        guard let search = textField.text else { return }
+        if search.isEmpty {
+            stackView.resetStack()
+        } else {
+            viewModel.searchAddress(input: textField.text ?? "")
+        }
+        
     }
 }
 
@@ -141,19 +147,20 @@ extension GoogleAutocompleteVC {
 
 extension GoogleAutocompleteVC: GoogleAutocompleteViewProtocol {
     func addressPredictions(predictions: [Prediction]) {
-        debugPrint("predictions: \(predictions.count)")
         self.stackView.resetStack()
         predictions.forEach { [weak self] (prediction: Prediction) in
             guard let self = self else {return}
-            let predictionview = PredictionView {
-                debugPrint("predictionview clicked")
+            let predictionview = PredictionView(viewModel: PredictionViewVM(placeId: prediction.placeId ?? "", placeDetail: prediction.description ?? "")) { [weak self] (placeId) in
+                guard let self = self else {return}
+                self.stackView.resetStack()
+                self.viewModel.searchPlaceDetail(placeId)
             }
             self.stackView.addArrangedSubview(predictionview)
         }
     }
     
     func updateMapLocation(lattitude:CLLocationDegrees,longitude:CLLocationDegrees){
-        let camera = GMSCameraPosition.camera(withLatitude: lattitude, longitude: longitude, zoom: 16)
+        let camera = GMSCameraPosition.camera(withLatitude: lattitude, longitude: longitude, zoom: 10)
         mapView.camera = camera
         mapView.animate(toLocation: CLLocationCoordinate2D(latitude: lattitude, longitude: longitude))
         marker.position = CLLocationCoordinate2D(latitude: lattitude, longitude: longitude)

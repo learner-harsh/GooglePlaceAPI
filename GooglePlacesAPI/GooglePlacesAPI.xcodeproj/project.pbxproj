@@ -30,6 +30,7 @@
 		E457A08026691CC1002F0E1B /* Prediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E457A07F26691CC1002F0E1B /* Prediction.swift */; };
 		E457A089266923BF002F0E1B /* PredictionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E457A088266923BF002F0E1B /* PredictionView.swift */; };
 		E457A08E2669258E002F0E1B /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E457A08D2669258E002F0E1B /* UIStackView+.swift */; };
+		E457A093266931E3002F0E1B /* PredictionViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E457A092266931E3002F0E1B /* PredictionViewVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		E457A07F26691CC1002F0E1B /* Prediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prediction.swift; sourceTree = "<group>"; };
 		E457A088266923BF002F0E1B /* PredictionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionView.swift; sourceTree = "<group>"; };
 		E457A08D2669258E002F0E1B /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		E457A092266931E3002F0E1B /* PredictionViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionViewVM.swift; sourceTree = "<group>"; };
 		F97A8285C5A7D7D2B110F42D /* Pods-GooglePlacesAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GooglePlacesAPI.debug.xcconfig"; path = "Target Support Files/Pods-GooglePlacesAPI/Pods-GooglePlacesAPI.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -272,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				E457A088266923BF002F0E1B /* PredictionView.swift */,
+				E457A092266931E3002F0E1B /* PredictionViewVM.swift */,
 			);
 			path = PredictionView;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E457A093266931E3002F0E1B /* PredictionViewVM.swift in Sources */,
 				E457A0222668DCFB002F0E1B /* GoogleAutocompleteVC.swift in Sources */,
 				E4579FE02668D9CF002F0E1B /* AppDelegate.swift in Sources */,
 				E457A07A26691C8C002F0E1B /* URLSession+.swift in Sources */,

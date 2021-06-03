@@ -56,8 +56,12 @@ extension GoogleAutocompleteVM: GoogleAutocompleteVMProtocol {
     }
     
     func searchPlaceDetail(_ placeid: String) {
-        APIHandler.shared.googlePlaceResult(placeId: placeid) { (placeLocation: PlaceLocation?) in
-            debugPrint("placeLocation: \(placeLocation?.latitude), \(placeLocation?.longitude)")
+        APIHandler.shared.googlePlaceResult(placeId: placeid) { [weak self] (placeLocation: PlaceLocation?) in
+            guard let self = self else {return}
+            let lat: CLLocationDegrees = placeLocation?.latitude ?? 0
+            let lng: CLLocationDegrees = placeLocation?.longitude ?? 0
+            debugPrint("Search location: \(lat), \(lng)")
+            self.view.updateMapLocation(lattitude: lat, longitude: lng)
         }
     }
 }

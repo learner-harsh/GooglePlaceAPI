@@ -40,8 +40,13 @@ class PredictionView: UIView {
         return view
     }()
     
-    init(action: @escaping (() -> Void)) {
+    private var action: ((_ placeId: String) -> Void)!
+    private var viewModel: PredictionViewVMProtocol!
+    
+    init(viewModel: PredictionViewVMProtocol, action: @escaping ((_ placeId: String) -> Void)) {
         super.init(frame: CGRect.zero)
+        self.viewModel = viewModel
+        lblTitle.text = viewModel.placeDetail
         self.action = action
         setUpContainerView()
     }
@@ -54,12 +59,12 @@ class PredictionView: UIView {
         super.init(coder: aDecoder)
     }
     
-    private var action: (() -> Void)!
+    
     
     @objc private
     func actionButton() {
         debugPrint("Action")
-        action()
+        action(viewModel.placeId)
     }
 }
 

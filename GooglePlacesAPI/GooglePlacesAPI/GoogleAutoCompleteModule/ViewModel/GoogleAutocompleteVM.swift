@@ -10,11 +10,14 @@ import CoreLocation
 
 protocol GoogleAutocompleteViewProtocol: class {
     func updateMapLocation(lattitude:CLLocationDegrees,longitude:CLLocationDegrees)
+    func addressPredictions(predictions: [Prediction])
 }
 
 protocol GoogleAutocompleteVMProtocol {
     var userLocation: CLLocationCoordinate2D? {get}
     func viewDidLoad()
+    func searchAddress(input: String)
+    func searchPlaceDetail(_ placeid: String)
 }
 
 class GoogleAutocompleteVM: NSObject {
@@ -42,6 +45,19 @@ extension GoogleAutocompleteVM: GoogleAutocompleteVMProtocol {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func searchAddress(input: String) {
+        APIHandler.shared.googleAutocompleteResult(input: input, location: currentLocation ?? CLLocationCoordinate2D(latitude: 0, longitude: 0)) { [weak self] (predictions) in
+            guard let self = self else {return}
+            self.view.addressPredictions(predictions: predictions)
+        }
+    }
+    
+    func searchPlaceDetail(_ placeid: String) {
+        APIHandler.shared.googlePlaceResult(placeId: placeid) { (placeLocation: PlaceLocation?) in
+            debugPrint("placeLocation: \(placeLocation?.latitude), \(placeLocation?.longitude)")
         }
     }
 }

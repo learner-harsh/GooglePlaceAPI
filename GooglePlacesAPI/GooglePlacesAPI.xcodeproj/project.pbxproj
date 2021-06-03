@@ -28,6 +28,8 @@
 		E457A07526691724002F0E1B /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E457A07426691724002F0E1B /* APIHandler.swift */; };
 		E457A07A26691C8C002F0E1B /* URLSession+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E457A07926691C8B002F0E1B /* URLSession+.swift */; };
 		E457A08026691CC1002F0E1B /* Prediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E457A07F26691CC1002F0E1B /* Prediction.swift */; };
+		E457A089266923BF002F0E1B /* PredictionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E457A088266923BF002F0E1B /* PredictionView.swift */; };
+		E457A08E2669258E002F0E1B /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E457A08D2669258E002F0E1B /* UIStackView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		E457A07426691724002F0E1B /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		E457A07926691C8B002F0E1B /* URLSession+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+.swift"; sourceTree = "<group>"; };
 		E457A07F26691CC1002F0E1B /* Prediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prediction.swift; sourceTree = "<group>"; };
+		E457A088266923BF002F0E1B /* PredictionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionView.swift; sourceTree = "<group>"; };
+		E457A08D2669258E002F0E1B /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		F97A8285C5A7D7D2B110F42D /* Pods-GooglePlacesAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GooglePlacesAPI.debug.xcconfig"; path = "Target Support Files/Pods-GooglePlacesAPI/Pods-GooglePlacesAPI.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -235,6 +239,7 @@
 				E457A05B266900FF002F0E1B /* UIViewController+.swift */,
 				E457A06026690B5C002F0E1B /* UITextField+.swift */,
 				E457A07926691C8B002F0E1B /* URLSession+.swift */,
+				E457A08D2669258E002F0E1B /* UIStackView+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 		E457A072266916B4002F0E1B /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
+				E457A087266923AE002F0E1B /* PredictionView */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -260,6 +266,14 @@
 				E457A07F26691CC1002F0E1B /* Prediction.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E457A087266923AE002F0E1B /* PredictionView */ = {
+			isa = PBXGroup;
+			children = (
+				E457A088266923BF002F0E1B /* PredictionView.swift */,
+			);
+			path = PredictionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -546,9 +560,11 @@
 				E457A04E2668FD72002F0E1B /* RootViewController.swift in Sources */,
 				E457A0492668F7CE002F0E1B /* GoogleAutocompleteVM.swift in Sources */,
 				E457A06126690B5C002F0E1B /* UITextField+.swift in Sources */,
+				E457A08E2669258E002F0E1B /* UIStackView+.swift in Sources */,
 				E4579FE22668D9CF002F0E1B /* SceneDelegate.swift in Sources */,
 				E457A08026691CC1002F0E1B /* Prediction.swift in Sources */,
 				E457A0402668F747002F0E1B /* AppConstants.swift in Sources */,
+				E457A089266923BF002F0E1B /* PredictionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,10 +13,10 @@ class APIHandler {
     private init() {
     }
     
-    func googlePlacesResult(input: String, location: CLLocationCoordinate2D, completion: @escaping (_ result: [Prediction]) -> Void) {
+    func googleAutocompleteResult(input: String, location: CLLocationCoordinate2D, completion: @escaping (_ result: [Prediction]) -> Void) {
         let searchWordProtection = input.replacingOccurrences(of: " ", with: "")
         if !searchWordProtection.isEmpty {
-            let urlString = NSString(format: "%@?input=%@&types=establishment|geocode&location=%@,%@&radius=500&language=en&key=%@",GoogleUrl.autocomplete.rawValue,input,"\(location.latitude)","\(location.longitude)",AppConstants.googleMapKey)
+            let urlString = NSString(format: "%@?input=%@&types=establishment|geocode&location=%@,%@&radius=5000&language=en&key=%@",GoogleUrl.autocomplete.rawValue,input,"\(location.latitude)","\(location.longitude)",AppConstants.googleMapKey)
             let url = URL(string: urlString.addingPercentEscapes(using: String.Encoding.utf8.rawValue)!)
             URLSession.shared.jsonDecodableTask(with: url!) { (result: Result<PredictionData, Error>) in
                 switch result {
@@ -25,6 +25,23 @@ class APIHandler {
                 case .failure(let error):
                     print(error)
                     completion([])
+                }
+            }.resume()
+        }
+    }
+    
+    func googlePlaceResult(placeId: String, completion: @escaping (_ result: PlaceLocation?) -> Void) {
+        let searchWordProtection = placeId.replacingOccurrences(of: " ", with: "")
+        if !searchWordProtection.isEmpty {
+            let urlString = NSString(format: "%@=%@&key=%@",GoogleUrl.placeDetail.rawValue,placeId,AppConstants.googleMapKey)
+            let url = URL(string: urlString.addingPercentEscapes(using: String.Encoding.utf8.rawValue)!)
+            URLSession.shared.jsonDecodableTask(with: url!) { (result: Result<PlaceData, Error>) in
+                switch result {
+                case .success(let placeData):
+                    completion(placeData.result?.geometry?.location)
+                case .failure(let error):
+                    print(error)
+                    completion(nil)
                 }
             }.resume()
         }

@@ -48,8 +48,8 @@ class GoogleAutocompleteVC: UIViewController {
         view.distribution = .equalSpacing
         view.alignment = .fill
         view.axis = .vertical
-        view.spacing = 1
-        view.backgroundColor = .gray
+        view.spacing = 0.5
+        view.backgroundColor = .lightGray
         view.clipsToBounds = true
         return view
     }()
@@ -87,11 +87,7 @@ class GoogleAutocompleteVC: UIViewController {
     
     @objc private
     func textFieldDidChange(textField: UITextField) {
-        APIHandler.shared.googlePlacesResult(input: textField.text ?? "", location: viewModel.userLocation ?? CLLocationCoordinate2D(latitude: 0, longitude: 0)) { [weak self] (array) in
-            guard let self = self else {return}
-            
-            debugPrint(array)
-        }
+        viewModel.searchAddress(input: textField.text ?? "")
     }
 }
 
@@ -132,7 +128,7 @@ extension GoogleAutocompleteVC {
         stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constraints.point16).isActive = true
         stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constraints.point16).isActive = true
         stackView.topAnchor.constraint(equalTo: txtField.bottomAnchor, constant: Constraints.point0).isActive = true
-        stackView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        //        stackView.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
     private func transparentNavigationBar() {
@@ -144,6 +140,18 @@ extension GoogleAutocompleteVC {
 }
 
 extension GoogleAutocompleteVC: GoogleAutocompleteViewProtocol {
+    func addressPredictions(predictions: [Prediction]) {
+        debugPrint("predictions: \(predictions.count)")
+        self.stackView.resetStack()
+        predictions.forEach { [weak self] (prediction: Prediction) in
+            guard let self = self else {return}
+            let predictionview = PredictionView {
+                debugPrint("predictionview clicked")
+            }
+            self.stackView.addArrangedSubview(predictionview)
+        }
+    }
+    
     func updateMapLocation(lattitude:CLLocationDegrees,longitude:CLLocationDegrees){
         let camera = GMSCameraPosition.camera(withLatitude: lattitude, longitude: longitude, zoom: 16)
         mapView.camera = camera

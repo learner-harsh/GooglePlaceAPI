@@ -290,6 +290,8 @@
 				E4579FD82668D9CF002F0E1B /* Sources */,
 				E4579FD92668D9CF002F0E1B /* Frameworks */,
 				E4579FDA2668D9CF002F0E1B /* Resources */,
+				6E85B67DD6670D29A966953B /* [CP] Embed Pods Frameworks */,
+				032A3F52C7A5BADC0DF83B5B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -327,6 +329,8 @@
 				E4579FF92668D9D2002F0E1B /* Sources */,
 				E4579FFA2668D9D2002F0E1B /* Frameworks */,
 				E4579FFB2668D9D2002F0E1B /* Resources */,
+				0EF97BAD9950A8720E4B10C2 /* [CP] Embed Pods Frameworks */,
+				AF71F681CB32F63CA03CF93A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -408,6 +412,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		032A3F52C7A5BADC0DF83B5B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GooglePlacesAPI/Pods-GooglePlacesAPI-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GooglePlacesAPI/Pods-GooglePlacesAPI-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GooglePlacesAPI/Pods-GooglePlacesAPI-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		0794C366D4760C4AC48E6CC1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -430,6 +451,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		0EF97BAD9950A8720E4B10C2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GooglePlacesAPI-GooglePlacesAPIUITests/Pods-GooglePlacesAPI-GooglePlacesAPIUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GooglePlacesAPI-GooglePlacesAPIUITests/Pods-GooglePlacesAPI-GooglePlacesAPIUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GooglePlacesAPI-GooglePlacesAPIUITests/Pods-GooglePlacesAPI-GooglePlacesAPIUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		41E22BC40ED4DC49959974BD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -450,6 +488,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E85B67DD6670D29A966953B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GooglePlacesAPI/Pods-GooglePlacesAPI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GooglePlacesAPI/Pods-GooglePlacesAPI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GooglePlacesAPI/Pods-GooglePlacesAPI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF71F681CB32F63CA03CF93A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GooglePlacesAPI-GooglePlacesAPIUITests/Pods-GooglePlacesAPI-GooglePlacesAPIUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GooglePlacesAPI-GooglePlacesAPIUITests/Pods-GooglePlacesAPI-GooglePlacesAPIUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GooglePlacesAPI-GooglePlacesAPIUITests/Pods-GooglePlacesAPI-GooglePlacesAPIUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E56DA40F5F5ABE6FCC73BE16 /* [CP] Check Pods Manifest.lock */ = {

@@ -75,26 +75,26 @@ extension PredictionView {
         if !containerView.isDescendant(of: self) {
             self.addSubview(containerView)
         }
-        containerView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive = true
-        containerView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
-        containerView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
-        containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
-
+        containerView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Constraints.point0).isActive = true
+        containerView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: Constraints.point0).isActive = true
+        containerView.topAnchor.constraint(equalTo: self.topAnchor, constant: Constraints.point0).isActive = true
+        containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: Constraints.point0).isActive = true
+        
         
         if !lblTitle.isDescendant(of: containerView) {
             containerView.addSubview(lblTitle)
         }
-        lblTitle.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8).isActive = true
-        lblTitle.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8).isActive = true
-        lblTitle.topAnchor.constraint(equalTo: self.topAnchor, constant: 8).isActive = true
-        lblTitle.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8).isActive = true
+        lblTitle.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Constraints.point8).isActive = true
+        lblTitle.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Constraints.point8).isActive = true
+        lblTitle.topAnchor.constraint(equalTo: self.topAnchor, constant: Constraints.point8).isActive = true
+        lblTitle.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -Constraints.point8).isActive = true
         
         if !button.isDescendant(of: self) {
             self.addSubview(button)
         }
-        button.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive = true
-        button.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
-        button.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
-        button.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
+        button.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Constraints.point0).isActive = true
+        button.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: Constraints.point0).isActive = true
+        button.topAnchor.constraint(equalTo: self.topAnchor, constant: Constraints.point0).isActive = true
+        button.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: Constraints.point0).isActive = true
     }
 }

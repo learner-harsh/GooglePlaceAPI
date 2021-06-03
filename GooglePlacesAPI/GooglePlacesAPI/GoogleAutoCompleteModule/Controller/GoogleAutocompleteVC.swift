@@ -93,7 +93,6 @@ class GoogleAutocompleteVC: UIViewController {
         } else {
             viewModel.searchAddress(input: textField.text ?? "")
         }
-        
     }
 }
 
@@ -102,17 +101,15 @@ extension GoogleAutocompleteVC {
     private func loadUI() {
         view.backgroundColor = .white
         transparentNavigationBar()
-        
         view.addSubview(mapView)
         
         if !mapView.isDescendant(of: view) {
             view.addSubview(mapView)
         }
-        mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-        mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
-        mapView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
-        mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-        
+        mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constraints.point0).isActive = true
+        mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: Constraints.point0).isActive = true
+        mapView.topAnchor.constraint(equalTo: view.topAnchor, constant: Constraints.point0).isActive = true
+        mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: Constraints.point0).isActive = true
         
         marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
         marker.map = mapView
@@ -125,8 +122,8 @@ extension GoogleAutocompleteVC {
         }
         txtField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constraints.point16).isActive = true
         txtField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constraints.point16).isActive = true
-        txtField.topAnchor.constraint(equalTo: view.topAnchor, constant: (navigationController?.navigationBar.frame.size.height ?? 80) + topPadding + 20).isActive = true
-        txtField.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        txtField.topAnchor.constraint(equalTo: view.topAnchor, constant: (navigationController?.navigationBar.frame.size.height ?? Constraints.point80) + topPadding + Constraints.point20).isActive = true
+        txtField.heightAnchor.constraint(equalToConstant: Constraints.point50).isActive = true
         
         if !stackView.isDescendant(of: view) {
             view.addSubview(stackView)
@@ -134,7 +131,6 @@ extension GoogleAutocompleteVC {
         stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constraints.point16).isActive = true
         stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constraints.point16).isActive = true
         stackView.topAnchor.constraint(equalTo: txtField.bottomAnchor, constant: Constraints.point0).isActive = true
-        //        stackView.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
     private func transparentNavigationBar() {

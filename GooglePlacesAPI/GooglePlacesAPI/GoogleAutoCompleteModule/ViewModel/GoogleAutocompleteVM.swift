@@ -69,9 +69,12 @@ extension GoogleAutocompleteVM: GoogleAutocompleteVMProtocol {
 extension GoogleAutocompleteVM: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        currentLocation = locValue
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
-        view.updateMapLocation(lattitude: locValue.latitude, longitude: locValue.longitude)
+        if currentLocation == nil {
+            currentLocation = locValue
+            print("locations = \(locValue.latitude) \(locValue.longitude)")
+            view.updateMapLocation(lattitude: locValue.latitude, longitude: locValue.longitude)
+            locationManager.stopUpdatingLocation()
+        }
     }
 }
 

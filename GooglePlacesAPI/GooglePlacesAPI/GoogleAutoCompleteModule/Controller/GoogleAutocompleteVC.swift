@@ -34,7 +34,6 @@ class GoogleAutocompleteVC: UIViewController {
         view.textColor = .black
         view.backgroundColor = .white
         view.font = .systemFont(ofSize: 16, weight: .medium)
-        view.backgroundColor = .systemGroupedBackground
         view.cornerReduis(reduis: 5, BGColor: .white, borderColor: .clear, borderWidth: 0)
         view.clipsToBounds = true
         view.placeholder = "Search"

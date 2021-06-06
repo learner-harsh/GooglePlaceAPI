@@ -8,7 +8,7 @@
 import Foundation
 
 class AppConstants {
-    static let googleMapKey = "AIzaSyDEPRccIiyh_9H2qon_H9WSMcrOyQWJu1I"
+    static let googleMapKey = "Your key"
 }
 
 enum GoogleUrl : String {
